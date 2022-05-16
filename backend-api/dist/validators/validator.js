@@ -22,7 +22,7 @@ const validator = (values) => {
         errors.phone = "Toto pole je povinné";
     }
     else if (!regexNumber.test(values.phone)) {
-        errors.phone = "Jméno je ve špatném formátu (+420 xxx xxx xxx)";
+        errors.phone = "Číslo je ve špatném formátu (+420 xxx xxx xxx)";
     }
     if (!values.region) {
         errors.region = "Toto pole je povinné";

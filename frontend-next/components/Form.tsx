@@ -47,10 +47,12 @@ function Form() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+    setErrors({ ...errors, [name]: "" });
   };
 
   const regionHandleChange = (region: string): void => {
     setFormValues({ ...formValues, region: region, district: "" });
+    setErrors({ ...errors, region: "" });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {

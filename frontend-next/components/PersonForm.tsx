@@ -1,6 +1,7 @@
 import React from "react";
 import InputField from "./InputField";
 import { State, StateErrors } from "./Form";
+import { emailValidator, phoneValidator } from "../validators/inputValidators";
 
 interface Props {
   prevStep: () => void;
@@ -16,7 +17,7 @@ function PersonForm({ prevStep, handleChange, values, errors }: Props) {
       <span className="text-gray-600">
         Vyplňte osobní údaje a odešlete formulář.
       </span>
-      <div className="space-y-2">
+      <div className="space-y-3">
         <InputField
           required={true}
           type="text"
@@ -35,6 +36,7 @@ function PersonForm({ prevStep, handleChange, values, errors }: Props) {
           prompt="Zadejte email"
           error={errors.email}
           value={values.email}
+          validator={emailValidator}
           handleChange={handleChange}
         />
         <InputField
@@ -45,6 +47,7 @@ function PersonForm({ prevStep, handleChange, values, errors }: Props) {
           prompt="Zadejte telefonní číslo, včetně +420"
           error={errors.phone}
           value={values.phone}
+          validator={phoneValidator}
           handleChange={handleChange}
         />
       </div>
