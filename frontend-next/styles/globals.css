@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.svg-container path {
+  @apply hover:fill-blue-500 duration-300 cursor-pointer
+}
+
+/* radio input */
+.radio {
+  width: 100%;
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  @apply text-gray-600 pl-7 w-full cursor-pointer;
+}
+
+.radio input[type="radio"] {
+  display: none;
+}
+
+.radio span {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid #a0a4ac;  
+  display: block;
+  position: absolute;
+  left: 1px;
+  top: 3px;
+}
+
+.radio span:after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  display: block;
+  border-radius: 50%;
+  border: 5px solid #3b82f6;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: 300ms ease-in-out 0s;
+}
+
+.radio input[type="radio"]:checked ~ span:after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+form {
+  @apply relative my-4 p-4 space-y-2 bg-white rounded-md shadow-xl
+}
+
+.base_input_form {
+  width: 100%;
+  border-radius: 0.125rem;
+  border: 0.0625rem solid;
+  text-overflow: ellipsis;
+  height: 3rem;
+  padding: 0 1rem;
+  color: #000;
+  background: #fff;
+  border-color: #4e5761;
+  outline-color: #3b82f6;
+}
+
+.input_label {
+  @apply mb-2 text-lg font-semibold text-gray-700
+}
+
+.form_container {
+  @apply flex justify-center items-center min-h-screen bg-gray-200
+}
+
+.btn {
+  @apply mt-4 mb-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-5 rounded-full
+}
+
+.success {
+  @apply absolute -top-2 py-1 left-0 rounded-t-md w-full mx-auto text-center bg-green-400 font-medium
+}
+
+.error {
+  @apply block mt-1 text-base text-red-600
+}
+
+.small_title {
+  @apply font-bold text-gray-800
+}
