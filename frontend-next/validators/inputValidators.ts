@@ -7,8 +7,7 @@ export const emailValidator = (value: string) => {
 };
 
 export const phoneValidator = (value: string) => {
-  const regexNumber =
-    /^\+?([420]{3})?[ ]?([0-9]{3})[ ]?([0-9]{3})[ ]?([0-9]{3})$/;
+  const regexNumber = /^\+?(420)?[ ]?([0-9]{3})[ ]?([0-9]{3})[ ]?([0-9]{3})$/;
   if (!regexNumber.test(value)) {
     return "Číslo musí být ve formátu (+420 xxx xxx xxx)";
   }
